@@ -1,0 +1,98 @@
+
+body{
+    margin:0px;
+    font-family: 'Special Elite';
+    font-size:1.5em;
+}
+
+#container{
+    width: 900px;
+    height:100%;
+    border: 1px solid #000000;
+    margin:auto;
+}
+
+#header{
+    color:white;
+    background-color:#2955C0;
+    padding: 50px;
+    text-align: center;
+}
+
+#navbar{
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+#navbar a{
+    text-decoration: none;
+    color:#000000;
+}
+
+#navbar > a:hover{
+    color: #2955C0;
+}
+
+.cover{
+    width:100%;
+}
+
+#header_pic{
+    width:30%;
+    border-radius:50%;
+}
+
+#grid{
+    text-align: center;
+}
+
+#grid >img{
+    margin:20px;
+}
+
+.flex-container{
+    display:flex;
+    /*flex-direction: column;*/                              
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    align-self: center;
+}
+
+.flex-container > img{
+    width:50%;
+}
+
+#contact{
+    text-align: center;
+}
+
+@media screen and (max-width: 900px){
+    #container{
+        width:100%;
+        padding:10px;
+    }
+    main{
+        padding:2em;
+    }
+    #grid > img{
+        margin: 0px;
+        width:100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #container{
+        width:80%;
+        padding:10px;
+    }
+    main{
+        padding:2em;
+    }
+    #grid > img{
+        margin: 0px;
+        width:80%;
+    }
+}

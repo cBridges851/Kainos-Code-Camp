@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Current Stage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!--This is the section for the navigation bar-->
+    <div id="navigation_bar">
+            <ul>
+                    <li style="font-family: Berlin Sans FB; font-size: 3em; text-decoration:none;" class="nav_option">
+                        <a href="#">
+                            <img id="profile" src="images/profile.png" />Player</a>
+                    </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img style="float:center;"src="images/title.png"></li>
+                    <li style="font-family: Berlin Sans FB; font-size:2em; text-decoration: none; float:right; display: block;" class="nav_option">
+                        <a href="#">Log out</a>
+                    </li>
+                </ul>
+        <br>
+    </div>
+
+    <!--This is the section for the workspace-->
+    <div>
+        <div id="workspace">
+            <table width="150%">
+                <tr>
+                    <td id="information">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Risus nullam eget felis eget nunc lobortis mattis. Nibh cras pulvinar mattis
+                        nunc sed. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Cras ornare arcu
+                        dui vivamus arcu. Ac auctor augue mauris augue neque gravida. Massa massa ultricies mi quis hendrerit
+                        dolor magna eget est. Aliquet bibendum enim facilisis gravida neque convallis a cras. Lobortis mattis
+                        aliquam faucibus purus in. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Tempor
+                        commodo ullamcorper a lacus vestibulum sed arcu non odio. Aliquam vestibulum morbi blandit cursus
+                        risus at ultrices mi tempus. Fringilla ut morbi tincidunt augue interdum velit.</td>
+                </tr>
+                <tr>
+                    <td id="task" style="font-size:2em;">
+                        Question: The question will be here...
+                    </td>
+                </tr>
+                <tr>
+                    <td id="quiz">
+
+                        <br>
+
+                        <a class="option" href="templateCode.html">Answer 1</a>
+                        <br>
+                        <br>
+
+                        <a class="option" href="#">Answer 2</a>
+
+                        <br>
+                        <br>
+
+                        <a class="option" href="#">Answer 3</a>
+
+
+                    </td>
+
+
+
+
+                </tr>
+            </table>
+
+        </div>
+        <!--This is the section for the chatbot-->
+        <div id="chat_container">
+            <script>
+                function sendMessage() {
+                    console.log("Hello it's working")
+                    var messageBox = document.getElementById('msgbox')
+                    var question = messageBox.value
+                    var reply = "Hi"
+                    var replyArray = new Array(""); //Array of replies
+                    if (question.split(" ").indexOf("time") != -1) {
+                        reply = "It is " + new Date() //time stuff that is there for no reason
+                    }
+                    else {
+
+                    }
+                    // 3. We need to show both the question and the reply in the screen
+                    var replyBox = document.getElementById('replybox')
+                    replyBox.innerHTML = `
+                    <p class="chat_response">You: ${question}</p>
+                    <p class="chat_response">Professor Web: ${reply}</p>
+                `
+                    // 4. We need to clear up the question field
+                    messageBox.value = ""
+                }
+
+            </script>
+
+            <img width="20%" style="border-radius:50%;" src="images/scientist.png">
+            <h1 style="font-family: Century Gothic;">Professor Web</h1>
+            <div id="replybox"></div>
+            <input id="msgbox" placeholder="message" />
+            <input onclick="sendMessage()" type="submit" placeholder="Send" />
+        </div>
+    </div>
+</body>
+
+</html>

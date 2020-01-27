@@ -1,0 +1,51 @@
+#container{
+    width: 900px;
+    height:100%;
+    border: 1px solid #000000;
+    margin:auto;
+}
+
+n
+ul
+{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    width:"20%";
+    background-color: #f5f5f5;
+    
+}
+
+li 
+{
+    display:inline;
+}
+
+li a{
+    color:#000000;
+    padding: 8px 16px;
+    text-decoration:none;
+    font-family:Calibri;
+    
+}
+
+li a:hover
+{
+    color:#575757;
+}
+
+#head
+{
+    margin:auto;
+}
+
+
+td {
+    border: #FFFFFF solid;
+
+}
+
+#atca
+{
+    background-color:#f0f0f0;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Structure Of HTML -Stage 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!--This is the section for the navigation bar-->
+    <div id="navigation_bar">
+            <ul>
+                    <li style="font-family: Berlin Sans FB; font-size: 3em; text-decoration:none;" class="nav_option">
+                       
+                            <img alt="profile" id="profile" src="images/profile.png" />Player
+                    </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img alt="logo" id="logo" style="float:center;"src="images/title.png"></li>
+                    <li style="font-family: Berlin Sans FB; font-size:2em; text-decoration: none; float:right; display: block;" class="nav_option">
+                        <a href="Log Out.html">Log out</a>
+                    </li>
+                </ul>
+        <br>
+    </div>
+
+    <!--This is the section for the workspace-->
+    <div>
+        <div id="workspace">
+            <table width="150%">
+                <tr>
+                    <td id="information">
+                        Good! Since you know what the head tags are for in HTML, Professor Web now needs information about the body tags.
+                    </td>
+                </tr>
+                <tr>
+                    <td id="task" style="font-size:2em;">
+                        What goes in the body tags of a website?
+                    </td>
+                </tr>
+                <tr>
+                    <td id="quiz">
+
+                        <br>
+
+                        <a class="option" href="IncorrectStructureOfHTML.html">Information about the site that is not seen by the user.</a>
+                        <br>
+                        <br>
+
+                        <a class="option" href="Structure of HTML3.html">The content of the website that the user sees.</a>
+
+
+                    </td>
+
+
+
+
+                </tr>
+            </table>
+
+        </div>
+        <!--This is the section for the chatbot-->
+        <div id="chat_container">
+            <script>
+                function sendMessage() {
+                    console.log("Hello it's working")
+                    var messageBox = document.getElementById('msgbox')
+                    var question = messageBox.value
+                    var reply = "Hi, I don't have the answer to that."
+                    var jokeArray= new Array("My wife is really mad at the fact that I have no sense of direction. So I packed up my stuff and right.", "How do you make holy water? You boil the hell out of it.", "If a child refuses to sleep during nap time, are they guilty of resisting a rest?"); //Array of replies
+                    if(question.split(" ").indexOf("time") != -1) {
+                        reply = "It is " + new Date() //time stuff that is there for no reason
+                    }
+    
+                    else if(question.split(" ").indexOf("structure") != -1) {
+                        reply = "In HTML, there are head and body tags. <br> The head tags are at the top of the document and it contains stuff that the user cannot see, it is information about the page.<br> The body tags contains information that is displayed to the user.";
+                    }
+    
+                    else if(question.split(" ").indexOf("p") != -1) {
+                        reply="The p tag is used to create a paragraph."
+                    }
+    
+                    else if(question.split(" ").indexOf("style") != -1) {
+                        reply="The style tag is used to change how the website looks.";
+                    }
+                    
+                    else if(question.split(" ").indexOf("meta") != -1) {
+                        reply="The meta tag is used to provide information about the page.";
+                    }
+    
+                    else if(question.split(" ").indexOf("link") != -1) {
+                        reply="The link tag is used to link HTML pages to external pages.";
+                    }
+                
+    
+                    else{
+                        reply=reply;
+                    }
+                    // 3. We need to show both the question and the reply in the screen
+                    var replyBox = document.getElementById('replybox')
+                    replyBox.innerHTML = `
+                        <p class="chat_response">You: ${question}</p>
+                        <p class="chat_response">Professor Web: ${reply}</p>
+                    `
+                    // 4. We need to clear up the question field
+                    messageBox.value = ""
+                }
+        
+            </script>
+
+            <img alt="scientist" width="20%" style="border-radius:50%;" src="images/scientist.png">
+            <h1 style="font-family: Century Gothic;">Professor Web</h1>
+            <div id="replybox"></div>
+            <input id="msgbox" placeholder="message" />
+            <br><br>
+            <input id="submitButton" onclick="sendMessage()" type="submit" placeholder="Send" />
+        </div>
+    </div>
+</body>
+
+</html>

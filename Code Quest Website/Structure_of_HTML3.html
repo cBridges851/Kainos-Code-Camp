@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Structure Of HTML -Stage 3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="Author: Christa Bridges,
+    , Category: Educational Website, Price: $0,
+    Length:8 pages">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="galaxyS5.css" />
+    <link rel="stylesheet" href="iPad_Pro.css" />
+    <link rel="stylesheet" href="iPad.css" />
+    <link rel="stylesheet" href="iPhone_5_SE.css" />
+    <link rel="stylesheet" href="iPhone_6_7_8_plus.css" />
+    <link rel="stylesheet" href="iPhone_6_7_8.css" />
+    <link rel="stylesheet" href="pixel_2.css" />
+</head>
+
+<body>
+
+    <!--This is the section for the navigation bar-->
+    <div id="navigation_bar">
+        <ul>
+            <li style="font-family: Berlin Sans FB; font-size: 3em; text-decoration:none;" class="nav_option">
+                <img alt="profile" id="profile" src="images/profile.png" />Player
+            </li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img alt="logo" id="logo"  src="images/title.png">
+            </li>
+            <li style="font-family: Berlin Sans FB; font-size:2em; text-decoration: none; float:right; display: block;" class="nav_option">
+                <a href="Log_Out.html">Log out</a>
+            </li>
+        </ul>
+        <br>
+    </div>
+
+    <!--This is the section for the workspace-->
+    <div>
+        <div id="workspace">
+            <table id="workTable">
+                <tr>
+                    <td id="information">
+                        Professor Web is now trying to start building up the head tags and is experimenting with what tags can be used within it.
+                    </td>
+                </tr>
+                <tr>
+                    <td id="task" style="font-size:2em;">
+                        Which tag would not be used in the head tags?
+                    </td>
+                </tr>
+                <tr>
+                    <td id="quiz">
+
+                        <br>
+
+                        <a class="option" href="IncorrectStructureOfHTML.html">style</a>
+                        <br>
+                        <br>
+
+                        <a class="option" href="structureOfHTMLCompletion.html">p</a>
+                        <br>
+                        <br>
+
+                        <a class="option" href="IncorrectStructureOfHTML.html">meta</a>
+                        <br>
+                        <br>
+
+                        <a class="option" href="IncorrectStructureOfHTML.html">link</a>
+                        <br>
+                        <br>
+
+
+                    </td>
+
+
+
+
+                </tr>
+            </table>
+
+        </div>
+        <!--This is the section for the chatbot-->
+        <div id="chat_container">
+            <script>
+                function sendMessage() {
+                    console.log("Hello it's working")
+                    var messageBox = document.getElementById('msgbox')
+                    var question = messageBox.value
+                    var reply = "Hi, I don't have the answer to that."
+                    var jokeArray = new Array("My wife is really mad at the fact that I have no sense of direction. So I packed up my stuff and right.", "How do you make holy water? You boil the hell out of it.", "If a child refuses to sleep during nap time, are they guilty of resisting a rest?"); //Array of replies
+                    if (question.split(" ").indexOf("time") != -1) {
+                        reply = "It is " + new Date() //time stuff that is there for no reason
+                    }
+
+                    else if (question.split(" ").indexOf("structure") != -1) {
+                        reply = "In HTML, there are head and body tags. <br> The head tags are at the top of the document and it contains stuff that the user cannot see, it is information about the page.<br> The body tags contains information that is displayed to the user.";
+                    }
+
+                    else if (question.split(" ").indexOf("p") != -1) {
+                        reply = "The p tag is used to create a paragraph."
+                    }
+
+                    else if (question.split(" ").indexOf("style") != -1) {
+                        reply = "The style tag is used to change how the website looks.";
+                    }
+
+                    else if (question.split(" ").indexOf("meta") != -1) {
+                        reply = "The meta tag is used to provide information about the page.";
+                    }
+
+                    else if (question.split(" ").indexOf("link") != -1) {
+                        reply = "The link tag is used to link HTML pages to external pages.";
+                    }
+
+                    else if (question.split(" ").indexOf("joke") != -1) {
+                        var number = Math.floor(Math.random() * jokeArray.length);
+                        reply = jokeArray[number];
+                    }
+                    
+                    else {
+                        reply = reply;
+                    }
+                    // 3. We need to show both the question and the reply in the screen
+                    var replyBox = document.getElementById('replybox')
+                    replyBox.innerHTML = `
+                        <p class="chat_response">You: ${question}</p>
+                        <p class="chat_response">Professor Web: ${reply}</p>
+                    `
+                    // 4. We need to clear up the question field
+                    messageBox.value = ""
+                }
+
+            </script>
+
+            <img width="20%" style="border-radius:50%;" src="images/scientist.png" alt="image of Professor Web">
+            <h1 style="font-family: Century Gothic;">Professor Web</h1>
+            <div id="replybox"></div>
+            <label for="msgbox"> Message:
+                <input id="msgbox" name="msgbox" placeholder="message" />
+                <br>
+                <br>
+                <input id="submitButton" onclick="sendMessage()" type="submit" placeholder="Send" />
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>

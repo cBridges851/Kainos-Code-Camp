@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lightbox example</title>
+        <style>
+            #lightbox{
+                position:relative;
+                margin:auto;
+                top:0;
+                left:0;
+                width: 100vw;
+                height: 100vh;
+                background-color:#000000;
+            }
+
+            .closed{
+                display:none;
+            }
+            /*
+            #lightbox > img{
+                position:relative;
+                margin:auto;
+            }*/
+            </style>
+    </head>
+
+    <body>
+        <img onclick="toggleLightbox()" width="200px" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/doctor-who-new-doctors-modern-era-1545396802.jpg?resize=480:*">
+        
+        <div id="lightbox" class="closed">
+                <img onclick="toggleLightbox()" width="800px" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/doctor-who-new-doctors-modern-era-1545396802.jpg?resize=480:*">
+        </div>
+            <script>
+            var isClosed
+            function toggleLightbox(){
+                var lightbox = document.getElementById('lightbox')
+                if(isClosed){
+                    lightbox.classList.remove('closed');
+                    isClosed = false;
+                }
+
+                else{
+                    lightbox.classList.add('closed');
+                    isClosed = true;
+                }
+            }
+            
+        </script>
+    </body>
+</html>

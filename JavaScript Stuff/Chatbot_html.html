@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        body {
+            margin: 0px;;
+        }
+        #container {
+            width: 200px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+
+
+    <script>
+        function sendMessage() {
+            console.log("Hello its working")
+            var messageBox = document.getElementById('msgbox')
+            var question = messageBox.value
+            var reply = "Hi"
+            var replyArray= new Array("fish", "pancake", "salad", "french toast"); //Array of replies
+            if(question.split(" ").indexOf("time") != -1) {
+                reply = "It is " + new Date() //time stuff that is there for no reason
+            }
+            else{
+                var number = Math.floor(Math.random() *replyArray.length); //generates a random number
+                reply=replyArray[number]; //gets random element in array based on random number.
+            }
+            // 3. We need to show both the question and the reply in the screen
+            var replyBox = document.getElementById('replybox')
+            replyBox.innerHTML = `
+                <p>You said: ${question}</p>
+                <p>Bot said: ${reply}</p>
+            `
+            // 4. We need to clear up the question field
+            messageBox.value = ""
+        }
+
+    </script>
+</head>
+<body>
+   <div id="container">
+        <h1>Chatbot</h1>
+        <div id="replybox"></div>
+        <input id="msgbox" placeholder="message" />
+        <input onclick="sendMessage()" type="submit" placeholder="Send" />
+   </div> 
+
+   <p id="demo"></p>
+   <script>
+        
+        </script>
+</body>
+</html>
